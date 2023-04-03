@@ -1,4 +1,17 @@
 const buttonref = document.querySelector("button")
+    // remember the code above only selects the FIRST item that is "button"
+
+function addNewButtonandPara() {
+    let newbutton = document.createElement("button")
+    let newp = document.createElement("p")
+    document.body.appendChild(newbutton)
+    document.body.appendChild(newp)
+    newp.textContent = "PARAGRAPH TIME"
+    newbutton.textContent = "Purple"
+    newbutton.addEventListener("mouseover", bgbuttonchange)
+}
+
+buttonref.addEventListener("click", addNewButtonandPara)
 
 function buttonalert() {
     alert("Thanks for Clicking!")
@@ -53,12 +66,14 @@ buttoncontainer.addEventListener("click" , changetext)
 
 function changetext(event)
 {
+    // just to show the text name, easy way to see what properties to target!
     console.log(event.target.textContent);
+    // inline below! try to AVOID
     let newcolor = event.target.textContent;
     event.target.style.color = newcolor
 
     // or add class and css rule for each color, 
     // and use event.target.classList.add(newcolor)
-
-
 }
+
+
